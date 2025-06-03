@@ -1,0 +1,9 @@
+.*
+*.class
+*.jar
+*.bin
+*.log
+*.pdf
+
+build/
+target/
