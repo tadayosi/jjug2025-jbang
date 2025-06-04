@@ -17,6 +17,13 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.logging.HttpLoggingInterceptor;
 
+/**
+ * OkHttpを使って天気情報Webサービスwttr.inにアクセスし、
+ * エベレストの現在の天気を取得する。
+ *
+ * ロギングインターセプターでアクセスログをLogbackに出力するが、
+ * Logback設定のためにlogback.xmlを読み込む必要がある。
+ */
 public class wttr {
     static final Logger log = LoggerFactory.getLogger(wttr.class);
 

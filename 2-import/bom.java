@@ -7,6 +7,11 @@
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * SLF4Jを使ってINFOログにメッセージを
+ * 出力しているが、依存の指定にBOMを
+ * 使っている。
+ */
 public class bom {
     static final Logger log = LoggerFactory.getLogger(bom.class);
 

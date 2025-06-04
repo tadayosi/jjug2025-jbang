@@ -60,7 +60,7 @@ OSSコミッター
 
 ## インストール
 
-<https://www.jbang.dev/download/>
+:point_right: <https://www.jbang.dev/download/>
 
 ### curl
 
@@ -183,10 +183,23 @@ $ mcs org.slf4j:slf4j-api
 
 ### その他のタグ
 
-!!! TODO !!!
-
 ```java
 //JAVA 21+
+
+//COMPILE_OPTIONS --enable-preview --verbose
+
+//RUNTIME_OPTIONS --add-opens java.base/java.net=ALL-UNNAMED
+
+//NATIVE_OPTIONS -O1 -g
+
+//PREVIEW
+
+//MODULE <module-name>
+
+//MAIN <main-class-name>
+
+//MANIFEST Built-By=JBang
+
 ...
 ```
 
@@ -238,10 +251,10 @@ jbang export gradle app.java
 
 ## 高度な使い方
 
-- REST
-- gRPC
-- JMX / Jolokia
-- AI / LLM
+1. REST
+2. gRPC
+3. JMX / Jolokia
+4. AI / LLM
 
 ---
 
@@ -276,6 +289,8 @@ jbang my-cli@user/repo
 ```console
 jbang my-cli@user
 ```
+
+例: <https://github.com/apache/camel/blob/main/jbang-catalog.json>
 
 ### アプリとしてインストール
 

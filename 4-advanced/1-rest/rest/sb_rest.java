@@ -13,10 +13,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * Spring Boot版のREST実装。
+ * Spring Bootはパッケージがないと
+ * クラススキャンが動かない。
+ */
 @SpringBootApplication
 @RestController
 public class sb_rest {
-
+    /**
+     * Spring Bootではmainメソッドが必要。
+     */
     public static void main(String... args) {
         SpringApplication.run(sb_rest.class, args);
         out.println("Hello World");

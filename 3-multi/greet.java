@@ -6,6 +6,10 @@ import static java.lang.System.out;
 
 import service.GreetingService;
 
+/**
+ * 外部のサービスクラスを呼び出して
+ * 処理を実装するスクリプト。
+ */
 public class greet {
     static GreetingService service = new GreetingService();
 

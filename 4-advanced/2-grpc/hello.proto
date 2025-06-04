@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package hello;
+
+/**
+ * 単純に名前を受け取って、メッセージを返す
+ * Helloサービス
+ */
+service HelloService {
+  rpc Hello (HelloRequest) returns (HelloResponse) {}
+}
+
+/**
+ * リクエスト定義
+ */
+message HelloRequest {
+  // 名前を受け取る
+  string name = 1;
+}
+
+/**
+ * レスポンス定義
+ */
+message HelloResponse {
+  // メッセージを返す
+  string message = 1;
+}

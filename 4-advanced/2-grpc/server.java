@@ -20,9 +20,18 @@ import io.grpc.Grpc;
 import io.grpc.InsecureServerCredentials;
 import io.grpc.stub.StreamObserver;
 
+/**
+ * Helloサービスを実装したgRPCサーバー。
+ */
 public class server {
+    // サーバーのポート番号
     static int port = 50051;
 
+    /**
+     * gRPCサーバーを立ち上げる。
+     * JVM終了時にサーバーを停止するシャットダウンフック
+     * も登録している。
+     */
     public static void main(String... args) throws Exception {
         var server = Grpc.newServerBuilderForPort(port, InsecureServerCredentials.create())
                 .addService(new HelloServiceImpl())
@@ -37,6 +46,11 @@ public class server {
         server.awaitTermination();
     }
 
+    /**
+     * Helloサービスの実装。
+     * 受け取ったリクエストの内容を標準出力に出力し、
+     * メッセージを加えてレスポンスを返す。
+     */
     static class HelloServiceImpl extends HelloServiceImplBase {
         @Override
         public void hello(HelloRequest request, StreamObserver<HelloResponse> responseObserver) {

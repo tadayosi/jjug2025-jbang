@@ -5,10 +5,16 @@
 
 import static java.lang.System.out;
 
+import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 
+/**
+ * Quarkus + JAX-RSでRESTを実装する。
+ * Quarkusの仕組みによってmainがなくても動く。
+ */
 @Path("/")
+@ApplicationScoped
 public class quarkus_rest {
     @GET
     public String hello() {

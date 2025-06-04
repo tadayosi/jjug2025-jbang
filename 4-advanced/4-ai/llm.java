@@ -12,11 +12,24 @@ import dev.langchain4j.model.ollama.OllamaChatModel;
 import dev.langchain4j.service.AiServices;
 import dev.langchain4j.service.SystemMessage;
 
+/**
+ * LangChain4jを使ってOllamaのローカルLLMに
+ * アクセスするサンプル。
+ * 
+ * Llama3.2モデルに飲み物の作り方を聞く。
+ */
 public class llm {
-
+    // OllamaのURL
     static final String OLLAMA_URL = "http://localhost:11434";
+    // 使用するモデル
     static final String MODEL = "llama3.2";
 
+    /**
+     * LangChain4jにはAIサービスという機能が
+     * あって、インタフェースを定義するだけで
+     * 自動でチャットモデルとのやり取りを
+     * 実装してくれる。
+     */
     public static void main(String... args) {
         var model = OllamaChatModel.builder()
                 .baseUrl(OLLAMA_URL)
@@ -26,13 +39,18 @@ public class llm {
         var assistant = AiServices.builder(Assistant.class)
                 .chatModel(model)
                 .build();
-        var dish = args.length > 0 ? args[0] : "カレー";
+        var dish = args.length > 0 ? args[0] : "コーヒー";
         out.println(assistant.recipe(dish));
     }
 
+    /**
+     * AIサービスのインタフェース。
+     * システムプロンプトもアノテーションで
+     * 定義できる。
+     */
     interface Assistant {
         @SystemMessage("""
-                料理のレシピを考えてください。
+                飲み物の作り方を教えてください。
                 """)
         String recipe(String query);
     }

@@ -18,8 +18,11 @@ import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 
 /**
+ * 独自のJMX MBeanを登録するRESTサーバー。
+ * JMXの挙動をテストするのに使える。
+ *
  * このスクリプトをサーバーとして起動させるためだけに
- * RESTを使っています。
+ * Quarkus RESTを使っている。
  */
 @Path("/")
 public class jolokia {
@@ -31,6 +34,10 @@ public class jolokia {
     static final String objectName = "org.example:name=Sample";
     final Sample sampleMBean = new Sample();
 
+    /**
+     * CDIによる起動時の処理。
+     * MBeanをプラットフォームMBeanサーバーに登録する。
+     */
     void onStart(@Observes StartupEvent event) {
         out.println("Register mbean: " + objectName);
         try {
@@ -41,6 +48,10 @@ public class jolokia {
         }
     }
 
+    /**
+     * CDIによる終了時の処理。
+     * MBeanをプラットフォームMBeanサーバーから登録解除する。
+     */
     void onStop(@Observes ShutdownEvent event) {
         out.println("Unregister mbean: " + objectName);
         try {
@@ -51,6 +62,9 @@ public class jolokia {
         }
     }
 
+    /**
+     * カスタムMBeanのインターフェース。
+     */
     public interface SampleMBean {
         String getName();
 
@@ -63,6 +77,9 @@ public class jolokia {
         BigInteger bigintValue(BigInteger value);
     }
 
+    /**
+     * カスタムMBeanの実装。
+     */
     class Sample implements SampleMBean {
         public String getName() {
             return "Sample";

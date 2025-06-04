@@ -18,9 +18,18 @@ import hello.HelloServiceGrpc;
 import io.grpc.Grpc;
 import io.grpc.InsecureChannelCredentials;
 
+/**
+ * gRPCクライアントの実装。
+ */
 public class client {
+    // 接続先gRPCサーバーのアドレス
     static String target = "localhost:50051";
 
+    /**
+     * コマンドライン引数で名前を指定できる。
+     * gPRCクライアントを生成し、Helloサービスのスタブを通して
+     * リクエストをサーバーに送信する。
+     */
     public static void main(String... args) {
         var name = args.length > 0 ? args[0] : "JJUG";
 

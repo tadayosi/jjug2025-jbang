@@ -6,6 +6,10 @@
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * 標準出力の代わりに、SLF4Jを使ってINFOログに
+ * メッセージを出力するスクリプト。
+ */
 public class log {
     static final Logger log = LoggerFactory.getLogger(log.class);
 
