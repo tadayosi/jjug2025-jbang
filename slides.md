@@ -47,12 +47,12 @@ OSSコミッター
 - Javaはフットワークが重い
 - JBangは 1スクリプト ＝ 1プロジェクト
 - 実行ランタイムは堅牢なJavaそのもの
-- エコシステムの充実
+- IDEサポート／エコシステムの充実
 - 次世代Java開発／コード共有のかたち？
 
 ---
 
-## :bulb: これからJava開発はJBangだけでイケるのでは？
+## :bulb: これからのJava開発はJBangだけでイケるのでは？
 
 ![bg right:50% h:60%](images/nobita.jpg)
 
@@ -249,16 +249,15 @@ jbang export gradle app.java
 
 ---
 
-## 高度な使い方
+## 実践編
 
 1. REST
 2. gRPC
-3. JMX / Jolokia
-4. AI / LLM
+3. AI / LLM
 
 ---
 
-## CLI開発とカタログ
+## CLI開発
 
 ```console
 jbang init --template=cli cli.java
@@ -268,6 +267,8 @@ jbang init --template=cli cli.java
 
 <https://picocli.info/>
 
+---
+
 ### JBangベースのCLI
 
 - [Camel](https://camel.apache.org/manual/camel-jbang.html) — Integration framework
@@ -276,21 +277,27 @@ jbang init --template=cli cli.java
 
 ---
 
-### カタログ `jbang-catalog.json`
+## カタログ
 
-<https://github.com/user/repo>に`jbang-catalog.json`がある場合
+`jbang-catalog.json`
+
+<https://github.com/user/repo> にある場合
 
 ```console
 jbang my-cli@user/repo
 ```
 
-<https://github.com/user/jbang-catalog>に`jbang-catalog.json`がある場合
+<https://github.com/user/jbang-catalog> にある場合
 
 ```console
 jbang my-cli@user
 ```
 
-例: <https://github.com/apache/camel/blob/main/jbang-catalog.json>
+### 例
+
+<https://github.com/apache/camel/blob/main/jbang-catalog.json>
+
+---
 
 ### アプリとしてインストール
 
@@ -317,6 +324,8 @@ jbang catalog list
 ---
 
 ## まとめ
+
+:bulb: これからのJava開発はJBangだけでイケるのでは？ :bulb:
 
 ### プレゼン資料／ソースコード
 
