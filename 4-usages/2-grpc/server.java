@@ -61,6 +61,5 @@ public class server {
             responseObserver.onNext(response);
             responseObserver.onCompleted();
         }
-
     }
 }

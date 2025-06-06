@@ -25,7 +25,7 @@ import ai.djl.training.util.ProgressBar;
  */
 public class djl {
     // 入力画像のパス
-    static Path input = Path.of("4-advanced/4-ai/3.png");
+    static Path input = Path.of("3.png");
 
     /**
      * DJLでは、

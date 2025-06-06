@@ -26,7 +26,6 @@ public class sb_rest {
      */
     public static void main(String... args) {
         SpringApplication.run(sb_rest.class, args);
-        out.println("Hello World");
     }
 
     @GetMapping("/")
