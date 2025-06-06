@@ -12,7 +12,6 @@ paginate: true
 
 2025-06-07
 [JJUG CCC 2025 Spring](https://ccc2025spring.java-users.jp/)
-[#ccc_f6](https://x.com/search?q=%23ccc_f6&f=live)
 
 ---
 
